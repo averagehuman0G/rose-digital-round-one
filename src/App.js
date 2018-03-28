@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Search from './Search.component';
+import Gallery from './Gallery.component';
+import AlbumInfo from './Albuminfo.component';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
 import './App.css';
 
+const style = {
+  margin: 12,
+};
+
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      isHidden: true,
+    };
+  }
+  toggleHidden() {
+    this.setState({
+      isHidden: !this.state.isHidden,
+    });
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <MuiThemeProvider>
+        <RaisedButton onClick={this.toggleHidden.bind(this)} label="Search for an album" fullWidth={true} />
+        {!this.state.isHidden && <SearchComponent />}
+        {!this.state.isHidden && <SearchComponent />}
+        {!this.state.isHidden && <SearchComponent />}
+      </MuiThemeProvider>
     );
   }
 }
