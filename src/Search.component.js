@@ -20,11 +20,11 @@ class Search extends Component {
       <div className="inline">
         <MuiThemeProvider>
           <TextField style={inputStyle} onChange={this.props.setsInputValue} hintText="Search for an album" />
-          <br />
+        </MuiThemeProvider>
+        <br />
+        <MuiThemeProvider>
           <RaisedButton onClick={this.props.searchAlbum} label="Search" style={btnStyle} />
         </MuiThemeProvider>
-        {/* {this.state.albums}
-        {this.state.gallery} */}
       </div>
     );
   }

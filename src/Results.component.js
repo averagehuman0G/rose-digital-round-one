@@ -9,9 +9,10 @@ class Results extends Component {
   render() {
     return (
       <div className="results">
-        <AlbumInfo album={this.props.albums.slice(0, 1)} />
-        <AlbumInfo album={this.props.albums.slice(1, 2)} />
-        <AlbumInfo album={this.props.albums.slice(2)} />
+        <AlbumInfo album={this.props.albums[0]} addToGallery={this.props.addToGallery} />
+        <AlbumInfo album={this.props.albums[1]} addToGallery={this.props.addToGallery} />
+        <AlbumInfo album={this.props.albums[2]} addToGallery={this.props.addToGallery} />
+        <button onClick={this.props.toggleHide}>Done</button>
       </div>
     );
   }
